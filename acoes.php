@@ -1,5 +1,11 @@
 <?php
 
+
+if (!isset($_SESSION["usuarioId"])) {
+    header("location: ../index.php");
+
+}
+
     session_start();
 
     require("./database/conexao.php");
@@ -47,7 +53,8 @@
             $resultado = mysqli_query($conexao, $sqlUpdate);
 
             header("location: listagem/index.php");
-            
+
+
             break;
 
         case 'deletar':

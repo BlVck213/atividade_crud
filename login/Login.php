@@ -43,7 +43,7 @@ switch ($_POST["acao"]) {
     case 'logout':
 
         session_destroy();
-        header("location: ../listagem/index.php");
+        header("location: ../index.php");
 
         break;    
     

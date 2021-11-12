@@ -15,11 +15,15 @@
 
 <body>
     
+<?php
+    if (isset($_SESSION["usuarioId"])) {
+?>
+
 <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand" href="">
         Cadastro
     </a>
-
+   
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a class="nav-link" href="../cadastro">Cadastrar</a>
@@ -33,13 +37,20 @@
         </li>
         
     </ul>
-
+   
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="../login/">Sair</a>
+            <form method="POST" action="../login/Login.php">
+            <input type="hidden" name="acao" value="logout"/>
+            <button class="btn btn-danger" type="submit">Sair</button>
+        </form>
         </li>
         
     </ul>
-    
+
 
 </nav>
+
+<?php 
+    } 
+?>  

@@ -2,6 +2,11 @@
 
     session_start();
 
+    if (!isset($_SESSION["usuarioId"])) {
+        header("location: ../index.php");
+    
+    }
+
     include('../componentes/header.php');
 
     require('../database/conexao.php');
